@@ -1,13 +1,11 @@
 $(document).ready(function(){
     $(window).scroll(function(){
-        // sticky navbar on scroll script
         if(this.scrollY > 20){
             $('.navbar').addClass("sticky");
         }else{
             $('.navbar').removeClass("sticky");
         }
-        
-        // scroll-up button show/hide script
+
         if(this.scrollY > 500){
             $('.scroll-up-btn').addClass("show");
         }else{
@@ -15,59 +13,43 @@ $(document).ready(function(){
         }
     });
 
-    // slide-up script
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
-        // removing smooth scroll on slide-up button click
-        $('html').css("scrollBehavior", "auto");
     });
 
     $('.navbar .menu li a').click(function(){
-        // applying again smooth scroll on menu items click
-        $('html').css("scrollBehavior", "smooth");
+        $('.navbar .menu').removeClass("active");
+        $('.navbar .menu-btn i').removeClass("active");
+        $('.navbar .menu-btn[aria-expanded]').attr("aria-expanded", "false");
+        $('.navbar .menu-btn[aria-expanded]').attr("aria-label", "Open navigation");
     });
 
-    // toggle menu/navbar script
-    $('.menu-btn').click(function(){
+    $('.navbar > .max-width > .menu-btn').click(function(){
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
+        var menuIsOpen = $('.navbar .menu').hasClass("active");
+        $(this).attr("aria-expanded", menuIsOpen);
+        $(this).attr("aria-label", menuIsOpen ? "Close navigation" : "Open navigation");
     });
 
-    // typing text animation script
-    var typed = new Typed(".typing", {
-        strings: ["IITian","Software Engineer", "Freelance Full-Stack Developer", "Athlete"],
+    new Typed(".typing", {
+        strings: ["Full-Stack Developer", "React Native Developer", "API Developer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
-    var typed = new Typed(".typing-2", {
-        strings: ["IITian","Software Engineer", "Freelance Full-Stack Developer", "Athlete"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
-
-    // owl carousel script
-    $('.carousel').owlCarousel({
+    $('.carousel, .live-projects-carousel').owlCarousel({
         margin: 20,
         loop: true,
         autoplay: true,
-        autoplayTimeOut: 2000,
+        autoplayTimeout: 2800,
+        autoplaySpeed: 700,
+        smartSpeed: 700,
         autoplayHoverPause: true,
         responsive: {
-            0:{
-                items: 1,
-                nav: false
-            },
-            600:{
-                items: 2,
-                nav: false
-            },
-            1000:{
-                items: 3,
-                nav: false
-            }
+            0: { items: 1, nav: false },
+            768: { items: 2, nav: false }
         }
     });
 });
