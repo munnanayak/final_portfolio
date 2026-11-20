@@ -33,7 +33,7 @@ $(document).ready(function(){
     });
 
     new Typed(".typing", {
-        strings: ["Full-Stack Developer", "React Native Developer", "API Developer"],
+        strings: ["an IITian", "a Flutter Developer", "an AI Developer", "a Full-Stack Developer", "an API Developer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
