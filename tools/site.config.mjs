@@ -1,12 +1,11 @@
 // Single source of truth for site-wide settings. Edit here, then run `npm run build`.
 export const site = {
-    // TODO: replace with the real domain once the site is deployed.
-    url: 'https://jatothvinod.com',
+    url: 'https://jatothvinod.services',
     name: 'Jatoth Vinod',
     brand: 'Vinod.',
     locale: 'en_IN',
     ogImage: '/src/assets/images/profile/vinod-portrait.jpg',
-    themeColor: '#2563eb',
+    themeColor: '#16a34a',
     person: {
         name: 'Jatoth Vinod',
         jobTitle: 'Full-Stack Developer',

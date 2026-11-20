@@ -40,7 +40,7 @@ npm start       # build + serve on http://localhost:3000
 
 ## Before going live
 
-1. Set the real domain in `tools/site.config.mjs` (`site.url`), then `npm run build`.
+1. Domain: `jatothvinod.services` (set in `tools/site.config.mjs`, `site.url`).
 2. Replace the social-share image (`site.ogImage`) with a 1200×630 branded image.
 3. Deploy at the domain root (Cloudflare Pages, Netlify, GitHub Pages with custom domain).
 4. Add the site to Google Search Console and submit `/sitemap.xml`.

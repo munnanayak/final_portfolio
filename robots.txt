@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /archive/
 
-Sitemap: https://jatothvinod.com/sitemap.xml
+Sitemap: https://jatothvinod.services/sitemap.xml

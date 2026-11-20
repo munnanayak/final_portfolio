@@ -195,5 +195,5 @@ await out(
 );
 await out(
     'favicon.svg',
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b1b2e"/><text x="32" y="45" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="700" text-anchor="middle" fill="#fff">V<tspan fill="#60a5fa">.</tspan></text></svg>\n`,
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b1b2e"/><text x="32" y="45" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="700" text-anchor="middle" fill="#fff">V<tspan fill="#4ade80">.</tspan></text></svg>\n`,
 );
