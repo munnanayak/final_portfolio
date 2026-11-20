@@ -1,0 +1,125 @@
+/* buttons, badge, page hero, CTA band, skip link, 404 */
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.skip-link{
+    position: absolute;
+    left: -999px;
+    top: 0;
+    z-index: 10000;
+    padding: 10px 16px;
+    background: #fff;
+    color: var(--dark);
+}
+.skip-link:focus{
+    left: 10px;
+}
+.btn{
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.btn:hover{
+    background: transparent;
+    color: var(--accent);
+}
+.btn-outline{
+    background: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+.btn-outline:hover{
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.btn-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 22px;
+}
+.iit-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 30px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .03em;
+}
+.iit-badge-dark{
+    border-color: var(--accent);
+    margin-bottom: 14px;
+}
+.page-hero{
+    padding: 150px 0 70px;
+    background: var(--dark);
+    color: #fff;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.page-hero h1{
+    font-size: 44px;
+    font-weight: 500;
+}
+.page-hero p{
+    max-width: 700px;
+    margin: 14px auto 0;
+    color: #ccc;
+    font-size: 19px;
+    line-height: 1.6;
+}
+.cta-band{
+    padding: 70px 0;
+    background: var(--accent);
+    color: #fff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.cta-band h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+}
+.cta-band p{
+    margin-top: 10px;
+}
+.cta-band .btn-row{
+    justify-content: center;
+}
+.cta-band .btn{
+    background: #fff;
+    border-color: #fff;
+    color: var(--accent);
+}
+.cta-band .btn:hover{
+    background: transparent;
+    color: #fff;
+}
+.cta-band .btn-outline{
+    background: transparent;
+    color: #fff;
+}
+.not-found{
+    padding: 200px 0 120px;
+    text-align: center;
+}
+.not-found h1{
+    font-size: 90px;
+    color: var(--accent);
+}
+.not-found p{
+    margin: 10px 0 24px;
+}

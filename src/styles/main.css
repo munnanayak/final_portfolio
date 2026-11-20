@@ -1,0 +1,25 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+/* Base */
+@import url('base/base.css');
+
+/* Components */
+@import url('components/buttons.css');
+@import url('components/navbar.css');
+@import url('components/footer.css');
+
+/* Sections */
+@import url('sections/home.css');
+@import url('sections/about.css');
+@import url('sections/experience.css');
+@import url('sections/skills.css');
+@import url('sections/services.css');
+@import url('sections/projects.css');
+@import url('sections/contact.css');
+
+/* Theme overrides (after all sections) */
+@import url('components/theme.css');
+
+/* Responsive overrides (keep last) */
+@import url('responsive.css');

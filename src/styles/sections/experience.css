@@ -1,0 +1,75 @@
+/* experience section styling */
+.experience, .projects{
+    color:#fff;
+    background: var(--dark);
+}
+.experience .title::before,
+.projects .title::before{
+    background: #fff;
+}
+.experience .title::after,
+.projects .title::after{
+    background: var(--dark);
+    content: "";
+}
+.experience .title::after{
+    content: "where i've worked";
+}
+.experience .serv-content{
+    align-items: stretch;
+}
+.experience .serv-content .card{
+    width: calc(50% - 15px);
+    background: var(--dark-2);
+    text-align: left;
+    border-radius: 6px;
+    padding: 34px 30px;
+    transition: all 0.3s ease;
+}
+.experience .serv-content .card:hover{
+    background: var(--accent);
+}
+.experience .serv-content .card .box{
+    transition: all 0.3s ease;
+}
+.experience .serv-content .card .experience-logo{
+    display: block;
+    width: 210px;
+    max-width: 100%;
+    height: 48px;
+    margin-bottom: 12px;
+    object-fit: contain;
+    object-position: left center;
+}
+.experience .serv-content .card:hover .box{
+    transform: scale(1.02);
+}
+.experience .serv-content .card i{
+    font-size: 42px;
+    color: var(--accent);
+    transition: color 0.3s ease;
+}
+.experience .serv-content .card:hover i{
+    color: #fff;
+}
+.experience .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.experience .serv-content .card .role{
+    margin-bottom: 14px;
+    color: #eee;
+    font-weight: 500;
+}
+.experience .serv-content .card .role span{
+    color: #bbb;
+    font-weight: 400;
+}
+.experience .serv-content .card ul{
+    padding-left: 20px;
+    color: #ddd;
+}
+.experience .serv-content .card li{
+    margin: 8px 0;
+}

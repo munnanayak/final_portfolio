@@ -1,0 +1,11 @@
+{
+  "name": "final-portfolio",
+  "version": "2.0.0",
+  "description": "Website of Jatoth Vinod, IIT Kharagpur alumnus and full-stack developer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "start": "npm run build && npx --yes serve . -l 3000"
+  }
+}

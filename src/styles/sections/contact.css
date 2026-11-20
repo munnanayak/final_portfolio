@@ -1,0 +1,97 @@
+/* contact section styling */
+.contact .title::after{
+    content: "get in touch";
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: var(--accent);
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+.contact .contact-content .info .sub-title{
+    color: #24405f;
+}
+.contact .contact-content .info a{
+    color: inherit;
+}
+.contact-note{
+    padding: 32px;
+    border-radius: 6px;
+    background: var(--surface);
+}
+.contact-link{
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 20px;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 500;
+    transition: all .3s ease;
+}
+.contact-link:hover{
+    background: transparent;
+    color: var(--accent);
+}
+.contact-link i{
+    margin-left: 6px;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.contact-form label{
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+    background: #fff;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{
+    outline: 2px solid var(--accent);
+    border-color: var(--accent);
+}
+.contact-form .btn{
+    margin-top: 16px;
+    align-self: flex-start;
+}
+.form-note{
+    margin-top: 8px;
+    color: #666;
+    font-size: 13px;
+}

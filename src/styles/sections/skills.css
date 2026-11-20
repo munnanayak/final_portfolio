@@ -1,0 +1,60 @@
+/* skills section styling */
+
+.skills .title::after{
+    content: "what i know";
+}
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.skills .skills-content .left p{
+    text-align: justify;
+}
+.skills .skills-content .left .text{
+    margin-bottom: 12px;
+}
+.resume-highlights h3{
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+.resume-highlights h3 span{
+    font-size: 15px;
+    font-weight: 400;
+}
+.resume-highlights p{
+    margin-bottom: 14px;
+}
+.resume-highlights ul{
+    padding-left: 20px;
+}
+.resume-highlights li{
+    margin: 9px 0;
+}
+.skill-group + .skill-group{
+    margin-top: 20px;
+}
+.skill-group h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.skill-tags,
+.project-tags{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.skill-tags li,
+.project-tags li{
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 14px;
+}
+.skill-tags li{
+    background: var(--surface);
+}

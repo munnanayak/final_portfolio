@@ -1,0 +1,54 @@
+/* responsive media queries (keep last) */
+@media (max-width: 1104px) {
+    .about .about-content .left img{ height: 350px; width: 350px; }
+}
+@media (max-width: 991px) {
+    .max-width{ padding: 0 50px; }
+}
+@media (max-width: 947px){
+    .menu-btn{ display: block; z-index: 999; }
+    .menu-btn i.active:before{ content: "\f00d"; }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #fff;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{ left: 0; }
+    .navbar .menu li{ display: block; }
+    .navbar .menu li a{ display: inline-block; margin: 18px 0; font-size: 25px; }
+    .max-width{ max-width: 930px; }
+    .home .home-content .text-2{ font-size: 46px; }
+    .about .about-content .column{ width: 100%; }
+    .about .about-content .left{ display: flex; justify-content: center; margin: 0 auto 60px; }
+    .about .about-content .right{ flex: 100%; }
+    .experience .serv-content .card{ width: calc(50% - 10px); margin-bottom: 20px; }
+    .skills .skills-content .column,
+    .contact .contact-content .column{ width: 100%; margin-bottom: 35px; }
+    .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 690px) {
+    .max-width{ padding: 0 23px; }
+    .home .home-content .text-2{ font-size: 38px; }
+    .home .home-content .text-3{ font-size: 17px; }
+    .page-hero{ padding: 120px 0 50px; }
+    .page-hero h1{ font-size: 32px; }
+    .page-hero p{ font-size: 16px; }
+    .cta-band h2{ font-size: 26px; }
+    .experience .serv-content .card{ width: 100%; }
+    .live-projects-grid,
+    .more-projects-grid{ grid-template-columns: 1fr; }
+    .footer-grid{ grid-template-columns: 1fr; }
+    .about .about-content .left img{ width: 100%; height: auto; }
+}
+@media (max-width: 500px) {
+    .home .home-content .text-2{ font-size: 32px; }
+    .about .about-content .right .text,
+    .skills .skills-content .left .text{ font-size: 19px; }
+    .scroll-up-btn{ right: 15px; bottom: 15px; height: 38px; width: 35px; font-size: 23px; line-height: 38px; }
+}
