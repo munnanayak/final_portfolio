@@ -2,27 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jatothvinod.services/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://jatothvinod.services/about/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jatothvinod.services/services/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jatothvinod.services/projects/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jatothvinod.services/contact/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jatothvinod.services/website-development/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jatothvinod.services/small-business-websites/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jatothvinod.services/website-development-cost/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jatothvinod.services/ecommerce-development/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jatothvinod.services/web-application-development/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jatothvinod.services/mobile-app-development/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jatothvinod.services/startup-mvp-development/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jatothvinod.services/website-redesign/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jatothvinod.services/ai-automation/</loc>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

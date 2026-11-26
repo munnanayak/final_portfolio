@@ -5,6 +5,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { site, nav } from './site.config.mjs';
 import { pages } from './pages.mjs';
+import { servicePages } from './services.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const P = site.person;
@@ -40,6 +41,13 @@ const ld = (o) => `<script type="application/ld+json">${JSON.stringify(o)}</scri
 
 function breadcrumb(page) {
     if (page.path === '/') return null;
+    if (page.crumbs) {
+        return {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [{ name: 'Home', path: '/' }, ...page.crumbs].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: `${site.url}${c.path}` })),
+        };
+    }
     const name = nav.find((n) => n.href === page.path)?.label ?? page.title;
     return {
         '@context': 'https://schema.org',
@@ -81,6 +89,10 @@ function footer() {
         <nav aria-label="Footer navigation">
             <h2>Pages</h2>
             <ul>${nav.map((n) => `<li><a href="${n.href}">${n.label}</a></li>`).join('')}</ul>
+        </nav>
+        <nav aria-label="Services">
+            <h2>Services</h2>
+            <ul>${servicePages.map((s) => `<li><a href="/${s.slug}/">${s.nav}</a></li>`).join('')}</ul>
         </nav>
         <div>
             <h2>Contact</h2>

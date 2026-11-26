@@ -1,5 +1,6 @@
 // Page content. Each page: path, title, description, body, optional bodyClass / jsonLd.
 import { site, projects, otherProjects } from './site.config.mjs';
+import { servicePages } from './services.mjs';
 
 const P = site.person;
 const img = (f) => `/src/assets/images/projects/${f}`;
@@ -79,13 +80,13 @@ const faqs = [
     ['Can you maintain the site after launch?', 'Yes. I can handle hosting, domain setup, updates and new features after launch.'],
 ];
 
-export const pages = [
+const basePages = [
     // ---------------------------------------------------------------- HOME
     {
         path: '/',
         file: 'index.html',
-        title: 'Jatoth Vinod | Website & Web App Developer | IIT Kharagpur Alumnus',
-        description: 'Hire Jatoth Vinod, an IIT Kharagpur graduate and full-stack developer, to build fast, SEO-ready websites, web apps and mobile apps for your business in India.',
+        title: 'Freelance Web Developer in India | Jatoth Vinod, IIT Alumnus',
+        description: 'Hire Jatoth Vinod, a freelance web developer in India and IIT Kharagpur graduate, for fast, SEO-ready websites, web apps and mobile apps. Get a free quote.',
         bodyClass: 'page-home',
         jsonLd: [
             {
@@ -109,7 +110,7 @@ export const pages = [
         <div class="home-content">
             <span class="iit-badge"><i class="fas fa-graduation-cap" aria-hidden="true"></i> IIT Kharagpur Alumnus · MTech</span>
             <p class="text-1">Hi, I'm Jatoth Vinod</p>
-            <h1 class="text-2">Websites &amp; web apps that grow your business</h1>
+            <h1 class="text-2">Freelance web developer in India: websites &amp; apps that grow your business</h1>
             <p class="text-3">Full-stack developer from <strong>IIT Kharagpur</strong>. I design, build and launch fast, SEO-ready websites for startups, shops, institutes and growing companies.</p>
             <div class="btn-row">
                 <a class="btn" href="/contact/">Get a free quote</a>
@@ -135,7 +136,7 @@ export const pages = [
         <h2 class="title">What I can build for you</h2>
         <div class="services-grid">${services.map(serviceCard).join('')}
         </div>
-        <p class="section-link"><a href="/services/">See all services and process <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+        <p class="section-link"><a href="/services/">Explore all services <i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
     </div>
 </section>
 
@@ -292,6 +293,14 @@ ${pageHero('Website &amp; App Development Services', 'From a simple business web
     </div>
 </section>
 
+<section class="explore">
+    <div class="max-width">
+        <h2 class="title">Explore services</h2>
+        <div class="explore-grid">${servicePages.map((x) => `<a class="explore-card" href="/${x.slug}/"><h3>${x.nav}</h3><p>${x.short}</p><span>Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>`).join('')}
+        </div>
+    </div>
+</section>
+
 <section class="process">
     <div class="max-width">
         <h2 class="title">How we work</h2>
@@ -402,3 +411,150 @@ ${pageHero('Contact', 'Tell me about your project. I reply within one working da
 </section>`,
     },
 ];
+
+
+// ------------------------------------------------------------------
+// Service landing pages (generated from tools/services.mjs)
+// ------------------------------------------------------------------
+const proofMap = {
+    openbook: { ...projects[0], href: projects[0].url },
+    nakka: { ...projects[1], href: projects[1].url },
+    presqio: { ...projects[2], href: projects[2].url },
+    jarvis: { ...projects[3], href: projects[3].url },
+    easidine: { name: 'EasiDine', text: otherProjects[0].text, href: '/projects/' },
+    meditation: { name: otherProjects[1].name, text: otherProjects[1].text, href: '/projects/' },
+};
+
+const exploreCard = (r) => `<a class="explore-card" href="/${r.slug}/"><h3>${r.nav}</h3><p>${r.short}</p><span>Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span></a>`;
+
+function servicePage(s) {
+    const related = s.related.map((slug) => servicePages.find((x) => x.slug === slug)).filter(Boolean);
+    const proof = s.proof.map((k) => proofMap[k]).filter(Boolean);
+    const external = (h) => (h.startsWith('http') ? ' target="_blank" rel="noopener noreferrer"' : '');
+    const quoteButtons = `<a class="btn" href="/contact/">Get a free quote</a>
+                <a class="btn btn-outline" href="${wa}" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp me</a>`;
+
+    const sections = s.sections
+        .map(
+            (sec, i) => `<section class="svc-block${i % 2 === 0 ? ' alt' : ''}">
+    <div class="max-width svc-prose">
+        <h2>${sec.h2}</h2>
+        ${sec.p.map((t) => `<p>${t}</p>`).join('\n        ')}
+    </div>
+</section>`,
+        )
+        .join('\n\n');
+
+    const packages = s.packages
+        ? `
+<section class="svc-block">
+    <div class="max-width">
+        <h2 class="title">Package types</h2>
+        <div class="services-grid">${s.packages.map((k) => `<article class="service-card"><h3>${k.name}</h3><p>${k.text}</p><p class="price-note">Price: on quote</p></article>`).join('')}
+        </div>
+    </div>
+</section>`
+        : '';
+
+    return {
+        path: `/${s.slug}/`,
+        file: `${s.slug}/index.html`,
+        title: s.title,
+        description: s.description,
+        bodyClass: 'page-inner',
+        crumbs: [{ name: 'Services', path: '/services/' }, { name: s.nav, path: `/${s.slug}/` }],
+        jsonLd: [
+            {
+                '@context': 'https://schema.org',
+                '@type': 'Service',
+                name: s.h1,
+                serviceType: s.nav,
+                description: s.description,
+                url: `${site.url}/${s.slug}/`,
+                areaServed: { '@type': 'Country', name: 'India' },
+                provider: { '@id': `${site.url}/#person` },
+            },
+            {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: s.faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+            },
+        ],
+        body: `
+<header class="page-hero">
+    <div class="max-width">
+        <h1>${s.h1}</h1>
+        <p>${s.lead}</p>
+        <div class="btn-row btn-row-center">
+                ${quoteButtons}
+        </div>
+    </div>
+</header>
+
+<section class="svc-block">
+    <div class="max-width">
+        <h2 class="title">What you get</h2>
+        <ul class="svc-list">${s.deliver.map((d) => `<li>${d}</li>`).join('')}</ul>
+    </div>
+</section>
+
+${sections}
+${packages}
+
+<section class="svc-block alt">
+    <div class="max-width svc-prose">
+        <h2>Who this is for</h2>
+        <ul class="svc-list svc-list-single">${s.audience.map((a) => `<li>${a}</li>`).join('')}</ul>
+    </div>
+</section>
+
+<section class="svc-block">
+    <div class="max-width">
+        <h2 class="title">Relevant work</h2>
+        <div class="proof-grid">${proof
+            .map(
+                (p) => `
+            <article class="proof-card">
+                <h3>${p.name}</h3>
+                <p>${p.text}</p>
+                <a href="${p.href}"${external(p.href)}>${p.href.startsWith('http') ? 'Visit live site' : 'See project'} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </article>`,
+            )
+            .join('')}
+        </div>
+    </div>
+</section>
+
+<section class="svc-block alt">
+    <div class="max-width">
+        <div class="price-box">
+            <h2>Pricing</h2>
+            <p>${s.pricing}</p>
+            <div class="btn-row">
+                ${quoteButtons}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <div class="max-width">
+        <h2 class="title">Frequently asked questions</h2>
+        <div class="faq-list">
+            ${s.faqs.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join('\n            ')}
+        </div>
+    </div>
+</section>
+
+<section class="svc-block alt">
+    <div class="max-width">
+        <h2 class="title">Related services</h2>
+        <div class="explore-grid">${related.map(exploreCard).join('')}
+        </div>
+    </div>
+</section>
+${ctaBand}`,
+    };
+}
+
+export const pages = [...basePages, ...servicePages.map(servicePage)];
